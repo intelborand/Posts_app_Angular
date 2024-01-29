@@ -43,6 +43,11 @@ export class UserPostComponent {
     }
   }
 
+  createPost(post: UserPost) {
+    userPosts.unshift(post);
+    this.filteredPosts = userPosts;
+  }
+
   likeComment(id: number) {
     this.filteredPosts.find((post) => {
       if (post.id === id) {

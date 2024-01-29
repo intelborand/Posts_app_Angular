@@ -1,0 +1,16 @@
+<div class="createPost">
+  <div>Create Post</div>
+
+  <div style="display: flex; flex-direction: column">
+    <mat-form-field for="name" class="example-full-width">
+      <input matInput placeholder="Name" [formControl]="name" />
+    </mat-form-field>
+    <mat-form-field for="postText" class="example-full-width">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput [formControl]="postText"></textarea>
+    </mat-form-field>
+    <button class="btn" mat-flat-button color="accent" (click)="addPost()">
+      Add post
+    </button>
+  </div>
+</div>
