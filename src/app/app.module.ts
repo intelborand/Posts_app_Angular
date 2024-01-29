@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreatePostComponent } from './create-post/create-post.component';
@@ -31,6 +32,7 @@ import { UserPostComponent } from './user-post/user-post.component';
     MatButtonModule,
     MatCardModule,
     ReactiveFormsModule,
+    PickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

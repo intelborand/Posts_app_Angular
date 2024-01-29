@@ -12,8 +12,14 @@ import { UserPostComponent } from '../user-post/user-post.component';
 export class CreatePostComponent {
   name = new FormControl('');
   postText = new FormControl('');
-
+  isEmojiPickerVisible: boolean;
+  textArea: string = '';
   constructor(private userPostComponent: UserPostComponent) {}
+
+  addEmoji(event: any) {
+    this.textArea = `${this.textArea}${event.emoji.native}`;
+    this.isEmojiPickerVisible = false;
+  }
 
   addPost() {
     const newPost: UserPost = {
@@ -25,5 +31,7 @@ export class CreatePostComponent {
     };
 
     this.userPostComponent.createPost(newPost);
+    this.name.setValue('');
+    this.postText.setValue('');
   }
 }

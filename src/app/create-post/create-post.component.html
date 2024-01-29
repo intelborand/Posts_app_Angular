@@ -7,7 +7,23 @@
     </mat-form-field>
     <mat-form-field for="postText" class="example-full-width">
       <mat-label>Leave a comment</mat-label>
-      <textarea matInput [formControl]="postText"></textarea>
+      <textarea
+        matInput
+        [formControl]="postText"
+        [(ngModel)]="textArea"
+      ></textarea>
+      <button
+        class="emoji_btn"
+        (click)="isEmojiPickerVisible = !isEmojiPickerVisible"
+      >
+        😀
+      </button>
+      <emoji-mart
+        class="emoji-mart"
+        *ngIf="isEmojiPickerVisible"
+        (emojiSelect)="addEmoji($event)"
+        title="Choose your emoji"
+      ></emoji-mart>
     </mat-form-field>
     <button class="btn" mat-flat-button color="accent" (click)="addPost()">
       Add post
